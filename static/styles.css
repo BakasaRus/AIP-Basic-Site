@@ -1,0 +1,8 @@
+nav ul {
+    padding-left: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}

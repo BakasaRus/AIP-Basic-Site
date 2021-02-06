@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Главная страница
+{% endblock %}
+
+{% block content %}
+    <h1>Последние посты</h1>
+    {% for article in articles %}
+    <article>
+        <h2>
+            {{ article.title }}
+            {% if article.is_verified %}
+                ✅
+            {% endif %}
+        </h2>
+        <p>{{ article.body }}</p>
+        <p><small>Андреев Николай, 5 минут назад</small></p>
+        <p><a href="{{ url_for('get_article', article_id=loop.index) }}">Читать дальше</a></p>
+    </article>
+    {% endfor %}
+{% endblock %}
